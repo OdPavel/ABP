@@ -1,0 +1,10 @@
+.root{
+    border: 1px solid red;
+
+}
+.text{
+    border: 1px solid red;
+    display: inline-block;
+    padding: 5px 30px;
+    font-size: 22px;
+}
