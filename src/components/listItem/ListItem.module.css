@@ -1,0 +1,15 @@
+table{
+    width: 800px;
+    margin: 0 auto;
+}
+
+h2{
+    margin: 20px 0;
+}
+td {
+    border: 1px solid grey;
+}
+tr{
+    border: 1px solid grey;
+    cursor: pointer;
+}
