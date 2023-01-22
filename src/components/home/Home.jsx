@@ -1,7 +1,5 @@
 import React from "react";
-import axios from "axios";
 import Form from "../form";
-import styles from './Home.module.css'
 import ListItem from "../listItem";
 import RenderLastVin from "../renderLastVin";
 
@@ -46,12 +44,12 @@ const Home = () => {
     }
 
     const onClickHandler = (vin) =>{
-        // console.log(vin)
         fetchRequest(vin)
     }
 
     return (
         <>
+            <h1>Проверка Вашего VIN кода</h1>
             <Form vin={(vin) => fetchRequest(vin)}/>
             {vinFromStorage !==null ? <RenderLastVin onClick={onClickHandler} arrLastVin={vinFromStorage}/> : ''}
             {!!loading && <h2>Идет загрузка, подождите пожалуйста</h2>}

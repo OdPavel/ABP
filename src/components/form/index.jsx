@@ -4,38 +4,51 @@ import styles from "./Form.module.css"
 import Button from "../UI/Button";
 
 const Form = ({vin}) => {
-    const [vinCode, setVinCode] = React.useState('')
+
     const {
         register,
-        formState:{
+        formState: {
             errors,
         },
         handleSubmit,
-    } = useForm()
-    const onSubmitHandler = (e) => {
-        e.preventDefault();
-        alert(e.target.value)
-        vin(vinCode)
-        setVinCode('')
+        reset,
+    } = useForm({
+        mode:"onBlur"
+    })
+    const onSubmitHandler = (data) => {
+        vin(data.vinCode);
+        reset();
     }
 
-    const handlerChange = ({target}) => {
-        setVinCode(target.value)
-    }
     return (
         <div className={styles.formContainer}>
             <form onSubmit={handleSubmit(onSubmitHandler)}>
-                <input
-                    value={vinCode}
-                    placeholder="Введите Ваш VIN code"
-                    onChange={handlerChange}
-                    required
-                    min="17"
-                    max="17"
-                />
-                <Button type="submit" title="Поиск">
-                    Поиск
-                </Button>
+                <div className="wrapper">
+                    <input
+                        placeholder="Введите Ваш VIN code"
+                        {...register('vinCode', {
+                            required: "Поле обязательно к заполнению",
+                            minLength:{
+                                value:17,
+                                message:'Поле должно содержать 17 символов'
+                            },
+                            maxLength:{
+                                value:17,
+                                message:'Поле должно содержать 17 символов'
+                            },
+                            pattern: {
+                                value: /[A-Za-z0-9]/,
+                                message: 'Запрещенные символы'
+                            },
+                        })}
+                    />
+
+                    <Button type="submit" title="Поиск">
+                        Поиск
+                    </Button>
+                </div>
+
+                <div className={styles.message}>{errors?.vinCode && <p>{errors?.vinCode?.message || "Error!"}</p>}</div>
             </form>
         </div>
     );

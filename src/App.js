@@ -1,25 +1,33 @@
 import {Routes, Route} from "react-router-dom";
+import React from "react";
 
 
 import './App.css';
 import Home from "./components/home/Home";
 import Variables from "./components/variables";
-import NotFaundBlock from "./components/NotFaundBlock";
+import NotFoundBlock from "./components/NotFoundBlock";
 import MainLayout from "./components/layouts/MainLayout";
+import SingleVariable from "./components/singleVariable";
+
+export const AppContext = React.createContext()
+
 
 function App() {
+    const [allVariables, setAllVariables] = React.useState([])
     return (
 
         <div className="App">
-            <Routes>
-                <Route path="/" element={<MainLayout/>}>
-                    <Route index element={<Home/>}/>
-                    <Route path="variables" element={<Variables/>}/>
-                    <Route path="*" element={<NotFaundBlock/>}/>
-                </Route>
+            <AppContext.Provider value={{allVariables, setAllVariables}}>
+                <Routes>
+                    <Route path="/" element={<MainLayout/>}>
+                        <Route index element={<Home/>}/>
+                        <Route path="variables" element={<Variables />}/>
+                        <Route path="variables/:variableId" element={<SingleVariable/>}/>
+                        <Route path="*" element={<NotFoundBlock/>}/>
+                    </Route>
+                </Routes>
+            </AppContext.Provider>
 
-
-            </Routes>
         </div>
 
 
@@ -28,4 +36,3 @@ function App() {
 
 export default App;
 //
-<h1>Проверка Вашего VIN кода</h1>

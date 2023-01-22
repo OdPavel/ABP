@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './NotFaundBlock.module.css';
+import styles from './NotFoundBlock.module.css';
 import {Link} from "react-router-dom";
 
-const NotFaundBlock = () => {
+const NotFoundBlock = () => {
     return (
         <div className={styles.root}>
-            <h1>Ничего не найденно</h1>
+            <h1>Ничего не найдено</h1>
             <span>😕</span>
             <p>Что бы проверить VIN вернитесь на главную</p>
             <Link to="/" className={styles.link}>
@@ -15,4 +15,4 @@ const NotFaundBlock = () => {
     );
 };
 
-export default NotFaundBlock;
+export default NotFoundBlock;

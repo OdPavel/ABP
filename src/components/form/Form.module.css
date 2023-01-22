@@ -1,26 +1,19 @@
 form {
     margin-top: 55px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 30px;
 }
 
 .formContainer input {
-    width: 45%;
     height: 30px;
     font-size: 1.3rem;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
 }
-/*input:invalid {*/
-/*    border: 2px dashed red;*/
-/*}*/
-
-/*input:valid {*/
-/*    border: 2px solid black;*/
-/*}*/
-/*input:invalid:required {*/
-/*    background-image: linear-gradient(to right, pink, lightgreen);*/
-/*}*/
+.message{
+    color: red;
+}
