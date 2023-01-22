@@ -5,12 +5,12 @@
 td {
     border: 1px solid grey;
 }
-a{
+.link{
     font-size: 20px;
     text-decoration: none;
     cursor: pointer;
     color: lightblue;
 }
-a:hover{
+.link:hover{
     text-decoration: underline;
 }

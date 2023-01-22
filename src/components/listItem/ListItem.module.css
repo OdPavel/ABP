@@ -1,6 +1,7 @@
 table{
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 3px;
 }
 
 h2{
@@ -8,7 +9,5 @@ h2{
 }
 td {
     border: 1px solid grey;
-}
-tr{
-    border: 1px solid grey;
+    padding: 5px 10px;
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import {Link} from "react-router-dom";
 import styles from './SingleVariable.module.css'
-import Button from "../UI/Button";
 import {AppContext} from "../../App";
 
 const SingleVariable = props => {
@@ -32,11 +31,9 @@ const SingleVariable = props => {
                 </tr>
                 </tbody>
             </table>
-            <Link to='/variables' ><Button>Back to variables</Button></Link>
-
+            <Link to='/variables' className={styles.link}>Back to variables</Link>
         </div>
     );
 };
-
 
 export default SingleVariable;

@@ -3,7 +3,7 @@ import styles from './ListItem.module.css'
 import PropTypes from 'prop-types';
 
 
-const ListItem = ({arr, title, allVariables}) => {
+const ListItem = ({arr, title}) => {
     return (
         <React.Fragment>
             <h2>{title}</h2>
@@ -20,17 +20,12 @@ const ListItem = ({arr, title, allVariables}) => {
 
             </table>
         </React.Fragment>
-
-
-    )
-        ;
+    );
 };
 
 ListItem.propTypes = {
-    arr:PropTypes.array.isRequired,
+    arr: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
-    allVariables: PropTypes.object,
-
 };
 
 export default ListItem;

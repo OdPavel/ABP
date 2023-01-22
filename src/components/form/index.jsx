@@ -13,7 +13,7 @@ const Form = ({vin}) => {
         handleSubmit,
         reset,
     } = useForm({
-        mode:"onBlur"
+        mode: "onBlur"
     })
     const onSubmitHandler = (data) => {
         vin(data.vinCode);
@@ -28,13 +28,9 @@ const Form = ({vin}) => {
                         placeholder="Введите Ваш VIN code"
                         {...register('vinCode', {
                             required: "Поле обязательно к заполнению",
-                            minLength:{
-                                value:17,
-                                message:'Поле должно содержать 17 символов'
-                            },
-                            maxLength:{
-                                value:17,
-                                message:'Поле должно содержать 17 символов'
+                            maxLength: {
+                                value: 17,
+                                message: 'Поле должно содержать 17 символов'
                             },
                             pattern: {
                                 value: /[A-Za-z0-9]/,

@@ -2,6 +2,10 @@
   text-align: center;
   margin-bottom: 30px;
 }
+container{
+  max-width: 1440px;
+  min-width: 320px;
+}
 .active{
   color: lightyellow;
   text-decoration: none;

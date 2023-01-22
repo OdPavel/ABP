@@ -7,10 +7,7 @@ const MainLayout = () => {
             <Menu/>
             <Outlet/>
         </>
-
-
     )
-
 };
 
 export default MainLayout;

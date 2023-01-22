@@ -5,3 +5,18 @@
 .table td{
     padding: 5px 10px;
 }
+.link{
+    height: 50px;
+    cursor: pointer;
+    background-color: beige;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    color: #112d49;
+    text-decoration: none;
+    transition: all .3s;
+}
+.link:hover{
+    background-color: #b7fab7;
+}
