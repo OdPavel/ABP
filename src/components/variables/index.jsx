@@ -14,7 +14,7 @@ const Variables = () => {
         }
 
         getVariableList()
-    },)
+    },[])
 
     return (
         <>
